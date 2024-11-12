@@ -1,6 +1,6 @@
 class ConstantsClass:
 #Variables that have been set as an example, but are not real!!
-    ClCruise = 0.45
+    CLCruise = 0.45
     #ClMaxAirfoil is at an angle of attack of 12 degrees
     ClMaxAirfoil = 1.797
     ClClimb = 1.2
@@ -9,7 +9,6 @@ class ConstantsClass:
     Clfl = 0.6
     ClMaxEstimate = 2.1
     Cd0 = 0.01096
-    #Mass Ratio is BetaS
     AspectRatio = 10 
     OswaldFactor = 0.682
     StallSpeed = 70
@@ -18,10 +17,12 @@ class ConstantsClass:
     RateOfClimb = 15
     Kt = 0.85
     FlapExtensionRatio = 1.21
-    FuselageDiameter = 3
     #ClMaxRatio is the ratio of CLmax of the wing to the ClMax of the airfoil
     ClMaxRatio = 0.82
 
+    IterativeMass = 331660.47891014774
+    #404691
+    
 #Known Values
     MachNum = 0.77
     ByPassRatio = 6
@@ -36,7 +37,7 @@ class ConstantsClass:
     dClMaxAirfoil = 1.3 * FlapExtensionRatio
 
 
-#Mass Ratios:
+#Mass Ratios (beta):
     MassRatio = 0.95
     MassRatioLanding = 0.845
 
@@ -84,10 +85,28 @@ class ConstantsClass:
     DensityAtTakeoff = 1.225
     Gamma = 1.4
 
+#Geometric Parameters
+    FusL1 = 6.16
+    FusL2 = 16.08
+    FusL3 = 7.84
+    FuselageDiameter = 2.8
+    FinenessRatioFus = (FusL1 + FusL2 + FusL3)/FuselageDiameter
+    TailS = 92/4 #WARNING!!
+    TailTaperRatio = 0.3 #WARNING!!
+    TailRootChord = 3.2 #WARNING!!
+    TailThickToChord = 0.12 #WARNING!!
+
+#IF Values (for class II drag estimation), as well as other misc parameters
+    IFwing = 1.25 #for low wing
+    IFtail = 1.045 #for conventional tail
+    IFfus = 1 #NO IDEA LOL
+    SurfaceKWing = 0.634 * 10*-5 #AN ESTIMATE
+    SurfaceKTail = 0.634 * 10*-5 #AN ESTIMATE
+    SurfaceKFuselage = 0.634 * 10*-5 #AN ESTIMATE
+    PercentCd0DueToExcrecence = 1.035
+    TechnologyFactorKa = 0.935 #FOR SUPERCRITICAL AIRFOILS
+
+
 #VERSIONS: 
 
-Constants = ConstantsClass()
-
-#VERSIONS: 
-Hi :D
 Constants = ConstantsClass()
